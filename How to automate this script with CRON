@@ -1,0 +1,35 @@
+While the Python script wallpaperswap.py does swap your wallpaper, you'll need to set up a cron job to run the script automatically. I configured a cron job to run every hour to check the current time and update the wallpaper accordingly.
+
+Not sure how to do this? Follow this guide:
+What is Cron?
+
+Cron (short for Command Run On Notice) is a job/task scheduler for Unix-like operating systems. Windows and macOS have their own versions (Windows: Task Scheduler / macOS: launchd).
+Setting Up a Cron Job
+
+    Open the Crontab Editor:
+    Open your terminal and type:
+      "crontab -e"
+
+This command initiates the crontab editor, which is a table of all scheduled cron jobs.
+
+Add a New Cron Job:
+The first five fields specify the timing intervals, followed by the path to your script. To set up the script to run at the top of every hour, add the following line:
+
+"0 * * * * /home/user/scripts/wallpaperswap.py"
+
+Some details around what's happening here:
+        0: The script runs at the 0th minute of each hour.
+        *: The script runs every hour.
+        *: The script runs every day of the month.
+        *: The script runs every month.
+        *: The script runs every day of the week.
+
+     - * implies run at every possible valueof that field. "0****" sequence means to run at the start of every hour, for every day, for every month, for each day of the week.
+    For more details on cron syntax, refer to this guide (https://phoenixnap.com/kb/set-up-cron-job-linux)
+
+    Save and Exit the Editor:
+        Press Ctrl + X to start the exit process.
+        Press Y to confirm saving the changes.
+        Press Enter to confirm the file name and save the changes.
+
+Your cron job is now set up!
