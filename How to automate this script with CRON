@@ -4,6 +4,7 @@ Not sure how to do this? Follow this guide:
 What is Cron?
 
 Cron (short for Command Run On Notice) is a job/task scheduler for Unix-like operating systems. Windows and macOS have their own versions (Windows: Task Scheduler / macOS: launchd).
+Those jobs are seperate and outside the scope of this write-up.
 Setting Up a Cron Job
 
     Open the Crontab Editor:
